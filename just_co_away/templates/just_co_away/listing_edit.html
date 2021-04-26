@@ -1,0 +1,12 @@
+{% extends 'just_co_away/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2>New Listing</h2>
+    <form method="POST" class="listing-form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

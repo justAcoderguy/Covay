@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>COVAY Results Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/justcoaway.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="container">
+
+            {% if user.is_authenticated %}
+            <a href="{% url 'listing_new' %}" class="top-menu">
+                {% include './icons/file-earmark-plus.svg' %}
+            </a>
+            <a href="{% url 'listing_draft_list' %}" class="top-menu">
+                {% include './icons/file-earmark-post.svg' %}
+            </a>
+            {% endif %}
+            <a href="{% url 'homepage' %}" class="top-menu">
+                {% include './icons/house-door.svg' %}
+            </a>
+            <h1><a href="/listings">Oxygen Cylinder Suppliers (Based on location and availability)</a></h1>
+            <p class="disclaimer">Although we verified the sources and regularly update them what works yesterday may
+                not work today or tomorrow. Everyone is running out of stock, capacity and resources so if you find
+                numbers that are switched off/busy/ or not picking up, move on to the next one. We will routinely call
+                and remove the ones that aren’t working and replace it with numbers that work.
+                We hope this helps.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
+        
+    </main>
+
+    
+
+</body>
+
+</html>

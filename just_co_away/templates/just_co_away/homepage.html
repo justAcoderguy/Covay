@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>COVAY Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="//fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+  <script>
+    (function () {
+      navigator.geolocation.getCurrentPosition(function (position) {
+          sessionStorage.setItem("lat", position.coords.latitude);
+          sessionStorage.setItem("long", position.coords.longitude);
+        },
+        function (error) {
+          console.log("Geolocation is not supported by this browser.")
+        })
+    })();
+  </script>
+
+  <style>
+    body {
+      background: rgba(84, 58, 183, 1);
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(90deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(90deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      --col-deepblue: #E9FBFF;
+    }
+
+    img {
+      margin-top: 50px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 250px;
+    }
+
+    @media (min-width: 480px) {
+      img {
+        margin-top: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+      }
+    }
+
+    .buttons {
+      margin: 3%;
+      text-align: center;
+    }
+
+    .btn-hover {
+      width: 240px;
+      font-family: Helvetica Neue;
+      font-size: 20px;
+      font-weight: 700;
+      color: rgba(84, 58, 183, 1);
+      cursor: pointer;
+      margin: 20px;
+      height: 60px;
+      text-align: center;
+      border: none;
+      background-size: 300% 100%;
+
+      border-radius: 50px;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+
+    .btn-hover:hover {
+      background-position: 100% 0;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+
+    .btn-hover:focus {
+      outline: none;
+    }
+
+    .btn-hover.color-9 {
+      background-image: linear-gradient(to right, #EFFCFF, #F5FDFF, #F9FAFF, #CAF5FF);
+      box-shadow: 0 4px 15px 0 rgba(84, 58, 183, 1);
+      font-family: 'Montserrat';
+      margin-top: 100px;
+    }
+
+    footer {
+      width: 100vw;
+      position: fixed;
+      text-align: center;
+      bottom: 10px;
+      right: 8px;
+      font-size: large;
+    }
+
+
+    footer div {
+      background-color: var(--col-deepblue);
+      margin: -5px 0px 0px 0px;
+      padding: 10px;
+      color: #000000;
+      text-align: right;
+    }
+
+    svg {
+      width: 100%;
+      overflow: visible;
+    }
+
+    .wave {
+      animation: wave 2s linear;
+      animation-iteration-count: infinite;
+      fill: #ffffff;
+    }
+
+    .drop {
+      fill: var(--col-deepblue);
+      xfill: #F0F8FF;
+      animation: drop 3.2s linear infinite normal;
+      stroke: var(--col-deepblue);
+      stroke-width: 0.5;
+      transform: translateY(25px);
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+    }
+
+    .drop1 {}
+
+    .drop2 {
+      animation-delay: 3s;
+      animation-duration: 3s;
+    }
+
+    .drop3 {
+      animation-delay: -2s;
+      animation-duration: 3.4s;
+    }
+
+    .drop4 {
+      animation-delay: 1.7s;
+    }
+
+    .drop5 {
+      animation-delay: 2.7s;
+      animation-duration: 3.1s;
+    }
+
+    .drop6 {
+      animation-delay: -2.1s;
+      animation-duration: 3.2s;
+    }
+
+    .gooeff {
+      filter: url(#goo);
+    }
+
+    #wave2 {
+      animation-duration: 5s;
+      animation-direction: reverse;
+      opacity: .6
+    }
+
+    #wave3 {
+      animation-duration: 7s;
+      opacity: .3;
+    }
+
+    @keyframes drop {
+      0% {
+        transform: translateY(25px);
+      }
+
+      30% {
+        transform: translateY(-10px) scale(.1);
+      }
+
+      30.001% {
+        transform: translateY(25px) scale(1);
+      }
+
+      70% {
+        transform: translateY(25px);
+      }
+
+      100% {
+        transform: translateY(-10px) scale(.1);
+      }
+    }
+
+    @keyframes wave {
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    p {
+      color: #ffffff;
+      font-family: 'Montserrat';
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img src="{% static '/assets/logo.png' %}" } </div> <center>
+    <p style=font-family:'Montserrat' size="4" color="#EFFCFF"> SENDING COVID AWAY </p>
+    <div class="buttons">
+      <a href="{% url 'listings' %}"> <button class="btn-hover color-9">Find Oxygen Supply</button></a>
+    </div>
+    <footer>
+      <svg viewBox="0 5 120 28">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="
+           1 0 0 0 0
+           0 1 0 0 0
+           0 0 1 0 0
+           0 0 0 13 -9" result="goo" />
+            <xfeBlend in="SourceGraphic" in2="goo" />
+          </filter>
+          <path id="wave"
+            d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+
+        </defs>
+
+        <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2"></use>
+        <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0"></use>
+
+
+        <g class="gooeff" filter="url(#goo)">
+          <circle class="drop drop1" cx="20" cy="2" r="8.8" />
+          <circle class="drop drop2" cx="25" cy="2.5" r="7.5" />
+          <circle class="drop drop3" cx="16" cy="2.8" r="9.2" />
+          <circle class="drop drop4" cx="18" cy="2" r="8.8" />
+          <circle class="drop drop5" cx="22" cy="2.5" r="7.5" />
+          <circle class="drop drop6" cx="26" cy="2.8" r="9.2" />
+          <circle class="drop drop1" cx="5" cy="4.4" r="8.8" />
+          <circle class="drop drop2" cx="5" cy="4.1" r="7.5" />
+          <circle class="drop drop3" cx="8" cy="3.8" r="9.2" />
+          <circle class="drop drop4" cx="3" cy="4.4" r="8.8" />
+          <circle class="drop drop5" cx="7" cy="4.1" r="7.5" />
+          <circle class="drop drop6" cx="10" cy="4.3" r="9.2" />
+
+          <circle class="drop drop1" cx="1.2" cy="5.4" r="8.8" />
+          <circle class="drop drop2" cx="5.2" cy="5.1" r="7.5" />
+          <circle class="drop drop3" cx="10.2" cy="5.3" r="9.2" />
+          <circle class="drop drop4" cx="3.2" cy="5.4" r="8.8" />
+          <circle class="drop drop5" cx="14.2" cy="5.1" r="7.5" />
+          <circle class="drop drop6" cx="17.2" cy="4.8" r="9.2" />
+          <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+        </g>
+        <!-- g mask="url(#xxx)">
+    <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+    </g>
+  </g -->
+      </svg>
+      <footer> COVAY, All Rights Reserved © 2021 | <a href="{% url 'contributors' %}">See our Contributors</a>
+
+      </footer>
+</body>
+
+</html>

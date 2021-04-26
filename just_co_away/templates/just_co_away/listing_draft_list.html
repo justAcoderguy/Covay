@@ -1,0 +1,23 @@
+{% extends 'just_co_away/base.html' %}
+
+{% block content %}
+    {% for listing in listings %}
+        <div class="listing">
+            <p class="date">created: {{ listing.created_date|date:'d-m-Y' }}</p>
+            <h2><a href = "{% url 'listing_detail' pk=listing.pk %}">Supplier: {{ listing.supplier|linebreaksbr }}</a></h2>
+            <p>Available? {{ listing.available|linebreaksbr }}</p>
+            <p>Price Range: {{ listing.price|linebreaksbr }}</p>
+            <p>Phone Number: {{ listing.phone_number|linebreaksbr }}</p>
+            <p>Landline Number: {{ listing.landline_number|linebreaksbr }}</p>
+            <p>Whatsapp Number: {{ listing.whatsapp_number|linebreaksbr }}</p>
+            <p>Address: {{ listing.address|linebreaksbr }}</p>
+            <p>State: {{ listing.state|linebreaksbr }}</p>
+            <p>City: {{ listing.city|linebreaksbr }}</p>
+            <p>PIN Code: {{ listing.pincode|linebreaksbr }}</p>
+            <p>Delivery Available? {{ listing.delivery|linebreaksbr }}</p>
+            <p>Max. Delivery Distance: {{ listing.maximum_delivery_distance|linebreaksbr }}</p>
+            <p>Cylinders Per Customer: {{ listing.cylinders_per_customer|linebreaksbr }}</p>
+            <p>Verified On: {{ listing.verified_on|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
