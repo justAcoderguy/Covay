@@ -35,3 +35,6 @@ pip install -r requirements.txt
 ```
 python manage.py migrate
 ```
+
+## Commmiting to this repo.
+ 1. While commiting please create a branch in your name/issue name and then commit. **DO NOT COMMIT TO MASTER BRANCH**
