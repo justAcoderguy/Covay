@@ -27,7 +27,7 @@
             src="https://www.googddle.com/maps/embed/v1/directions?key=AIzaSyAy0JVDXm-zy9Ipi0irwY_fMnsFenMkrzs&origin=sessionStorage.getItem('lat'),sessionStorage.getItem('long')&destination={{listing.address}}"
             allowfullscreen> 
         </iframe>
-        <p>Verified On: {{ listing.verified_on|linebreaksbr }}</p>
+        <p>Verified at: {{ listing.verified_on|linebreaksbr }} on {{listing.date_verified_on}}</p>
         </div>
     </div>
 
