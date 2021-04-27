@@ -23,7 +23,7 @@
            
         </article>
         <div class="col-md-6 ">
-        <iframe class="mt-5 " id="google_map_id" width="100%" height="75%" frameborder="" style="border:0" 
+        <iframe class="mt-5 " id="{{listing.pk}}" width="100%" height="75%" frameborder="" style="border:0" 
             src="https://www.googddle.com/maps/embed/v1/directions?key=AIzaSyAy0JVDXm-zy9Ipi0irwY_fMnsFenMkrzs&origin=sessionStorage.getItem('lat'),sessionStorage.getItem('long')&destination={{listing.address}}"
             allowfullscreen> 
         </iframe>
@@ -33,7 +33,7 @@
 
 <script>
     function googleMapLoad(){
-        var iframe_ele = document.getElementById('google_map_id');
+        var iframe_ele = document.getElementById('{{listing.pk}}');
         iframe_ele.src = 'https://www.google.com/maps/embed/v1/place?key={{api_key}}&q={{listing.address}}'
     }
     googleMapLoad();
@@ -65,18 +65,6 @@
     })();
 </script>
 
-
-    function googleMapLoad(){
-        var listings = JSON.parse('{{listings_json | safe}}');
-        for (i= 0; i < listings.length ; i++){
-            var id = listings[i].pk
-            var address = listings[i].fields.address
-            var iframe_ele = document.getElementById(id);
-            iframe_ele.src = 'https://www.google.com/maps/embed/v1/place?key={{api_key}}&q=' + address + '"'
-            
-        }
-    }
-    googleMapLoad();
 <script>
    //function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
    //     var R = 6371; // Radius of the earth in km
