@@ -31,7 +31,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['covay-19.herokuapp.com','0.0.0.0','127.0.0.1', '.pythonanywhere.com', 'wwww.covay.in', 'covay.in', 'co-vay.herokuapp.com']
+ALLOWED_HOSTS = ['covay-19.herokuapp.com','0.0.0.0','127.0.0.1', '.pythonanywhere.com', 'www.covay.in', 'covay.in', 'co-vay.herokuapp.com']
 
 
 # Application definition
