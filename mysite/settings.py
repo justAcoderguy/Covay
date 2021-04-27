@@ -87,6 +87,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# Uncomment this config for local development
+
 # DATABASES = {
 #     "default": {
 #         "ENGINE" : "django.db.backends.sqlite3",
@@ -94,8 +96,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }
 
-#C
 
+# Comment out this configuration of the database for local development
 DATABASES = {
     "default": {
         "ENGINE" : "django.db.backends.postgresql",
