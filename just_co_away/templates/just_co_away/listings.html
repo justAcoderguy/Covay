@@ -23,7 +23,7 @@
            
         </article>
         <div class="col-md-6 ">
-        <iframe class="mt-5 " id={{listing.id}} width="100%" height="75%" frameborder="" style="border:0" 
+        <iframe class="mt-5 " id="google_map_id" width="100%" height="75%" frameborder="" style="border:0" 
             src="https://www.googddle.com/maps/embed/v1/directions?key=AIzaSyAy0JVDXm-zy9Ipi0irwY_fMnsFenMkrzs&origin=sessionStorage.getItem('lat'),sessionStorage.getItem('long')&destination={{listing.address}}"
             allowfullscreen> 
         </iframe>
@@ -31,58 +31,72 @@
         </div>
     </div>
 
+<script>
+    function googleMapLoad(){
+        var iframe_ele = document.getElementById('google_map_id');
+        iframe_ele.src = 'https://www.google.com/maps/embed/v1/place?key={{api_key}}&q={{listing.address}}'
+    }
+    googleMapLoad();
+
+</script>
+
+   
 
 
-
-
-
-    <script>
-        // Script to get the location of the user
-        (function () {
-            navigator.geolocation.getCurrentPosition(function (position) {
-            sessionStorage.setItem("lat", position.coords.latitude);
-            sessionStorage.setItem("long", position.coords.longitude);
-            },
-            function (error) {
-                console.log("Geolocation is not supported by this browser.")
-            })
-        })();
-
-        function googleMapLoad(){
-            var listings = JSON.parse('{{listings_json | safe}}');
-            for (i= 0; i < listings.length ; i++){
-                var id = listings[i].pk
-                var address = listings[i].fields.address
-                var iframe_ele = document.getElementById(id);
-                iframe_ele.src = 'https://www.google.com/maps/embed/v1/place?key={{api_key}}&q=' + address + '"'
-                
-            }
-        }
-        googleMapLoad();
-
-       //function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
-       //     var R = 6371; // Radius of the earth in km
-       //     var dLat = deg2rad(lat2-lat1);  // deg2rad below
-       //     var dLon = deg2rad(lon2-lon1); 
-       //     var a = 
-       //       Math.sin(dLat/2) * Math.sin(dLat/2) +
-       //       Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
-       //       Math.sin(dLon/2) * Math.sin(dLon/2)
-       //       ; 
-       //     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-       //     var d = R * c; // Distance in km
-       //     return d;
-       //   }
-       //   
-       //   function deg2rad(deg) {
-       //     return deg * (Math.PI/180)
-       //   }
-
-    </script>
-
-
-    {% endfor %}
+{% endfor %}
 {% else %}
 <h1>Sorry, there are no available Oxygen Dealers available currently.</h1>
 {% endif %}
 {% endblock %}
+
+
+{% block script %}
+
+<script>
+    // Script to get the location of the user
+    (function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+        sessionStorage.setItem("lat", position.coords.latitude);
+        sessionStorage.setItem("long", position.coords.longitude);
+        },
+        function (error) {
+            console.log("Geolocation is not supported by this browser.")
+        })
+    })();
+</script>
+
+
+    function googleMapLoad(){
+        var listings = JSON.parse('{{listings_json | safe}}');
+        for (i= 0; i < listings.length ; i++){
+            var id = listings[i].pk
+            var address = listings[i].fields.address
+            var iframe_ele = document.getElementById(id);
+            iframe_ele.src = 'https://www.google.com/maps/embed/v1/place?key={{api_key}}&q=' + address + '"'
+            
+        }
+    }
+    googleMapLoad();
+<script>
+   //function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+   //     var R = 6371; // Radius of the earth in km
+   //     var dLat = deg2rad(lat2-lat1);  // deg2rad below
+   //     var dLon = deg2rad(lon2-lon1); 
+   //     var a = 
+   //       Math.sin(dLat/2) * Math.sin(dLat/2) +
+   //       Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+   //       Math.sin(dLon/2) * Math.sin(dLon/2)
+   //       ; 
+   //     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+   //     var d = R * c; // Distance in km
+   //     return d;
+   //   }
+   //   
+   //   function deg2rad(deg) {
+   //     return deg * (Math.PI/180)
+   //   }
+</script>
+
+
+
+{% endblock script %}

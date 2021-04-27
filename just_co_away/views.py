@@ -20,10 +20,8 @@ def contributors(request):
 
 def listings(request):
     listings = Listing.available_objects.filter(published_date__lte = timezone.now())
-    listings_json = serializers.serialize("json",listings)
     return render(request, 'just_co_away/listings.html', 
     {'listings': listings, 
-    'listings_json': listings_json,
     'api_key': settings.GOOGLE_MAPS_API_KEY,
     })
 
