@@ -16,6 +16,7 @@ touch .env
     It is however not necessary and you should still be able to see the outline of the map for styling purposes
   - Make sure DEBUG is set to True
   - Make sure you provide a valid Django Secret Key.
+  - Make sure your MODE is set to Local
 
 2. Create a Virtual Environment in the Root directory and activate it( directory with manage.py ).
 (Code for linux OS):
@@ -27,11 +28,7 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
-4. Make some changes in your settings.py file.
-  - Go to the database section and uncomment the db.sqlite3 config.
-  - Comment out the postgresql config
-  - **MAKE SURE TO REVERT THIS CHANGE BEFORE PUSHING**
-5. Run migrate command
+4. Run migrate command
 ```
 python manage.py migrate
 ```

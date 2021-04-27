@@ -84,32 +84,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# Uncomment this config for local development
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE" : "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
-#     }
-# }
-
-
-# Comment out this configuration of the database for local development
-DATABASES = {
-    "default": {
-        "ENGINE" : "django.db.backends.postgresql",
-        "NAME": 'd7p0l3i19v1mp5',
-        "HOST": 'ec2-54-163-254-204.compute-1.amazonaws.com',
-        "PORT": 5432,
-        "USER": 'lzmiuclzycjpha',
-        "PASSWORD": env('PASSWORD'),
-
-    }
-}
-
 
 
 # Password validation
@@ -159,3 +133,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+try:
+    if env("MODE")=="PRODUCTION":
+        from mysite.production_settings import *
+    else:
+        from mysite.local_settings import *
+except ImportError:
+    print('Settings file cannot be imported.')
+    pass
