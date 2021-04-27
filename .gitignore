@@ -6,13 +6,15 @@ __pycache__
 # Env
 .env
 myvenv/
-venv/
+venv/ 
 
 # Database
 db.sqlite3
 
 # Static folder at project root
 /static/
+local.bat
+runserver.bat
 
 # macOS
 ._*
