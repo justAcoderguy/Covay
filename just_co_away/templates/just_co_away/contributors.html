@@ -33,12 +33,61 @@ body {
  --col-deepblue: #E9FBFF;
 }
 
+img {
+      margin-top: 70px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 340px;
+    }
 
 @media (min-width: 900px) {
   .background {
     padding: 0 0 220px;
   }
 }
+
+@media (max-width: 480px) {
+      img {
+        margin-top: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+      }
+      .btn-hover.color-9 {
+        width: 57%;
+        font-size: 16px;
+      }
+      footer {
+        width: 100vw;
+        position: fixed;
+        text-align: center;
+        bottom: 10px;
+        font-size: 12px;
+      }
+      .panel {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 15px 25px;
+        position: relative;
+        width: 70%;
+        z-index: 10;
+      }
+
+      .pricing-table {
+        box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+      .pricing-plan {
+        border-bottom: none;
+        border-right: 1px solid #e1f1ff;
+        flex-basis: 100%;
+      }
+    }
+
 
 .container {
   margin: 0 auto;
@@ -164,19 +213,21 @@ a {
   text-decoration:none;
 }
 footer {
-  width:100vw;
-  position:fixed;
-  text-align: right;
-  bottom:10px;
-  right: 8px;
-}
-footer div {
-  background-color: var(--col-deepblue);
-  margin: -5px 0px 0px 0px;
-  padding:10px;
-  color: #000000;
-  text-align:right;
-}
+      width: 100vw;
+      position: fixed;
+      text-align: center;
+      bottom: 10px;
+      right: 10px;
+    }
+
+
+    footer div {
+      background-color: var(--col-deepblue);
+      margin: -5px 0px 0px 0px;
+      padding: 10px;
+      color: #000000;
+      text-align: right;
+    }
 svg {
   width:100%;
   overflow:visible;
@@ -255,25 +306,21 @@ svg {
 </style>
 </head>
 <body>
-  <img src="{% static 'just_co_away/assets/logo.png' %}" style="
-  margin-top:50px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 400px;">
+  <img src="{% static '/assets/logo.png' %}" style=
+ >
 <div class="background">
   <div class="container">
     <div class="panel pricing-table">
       
       
       <div class="pricing-plan">
-        <img src="{% static 'just_co_away/assets/1.png' %}" alt="" class="pricing-img">
+        <img src="{% static '/assets/1.png' %}" alt="" class="pricing-img">
         <h3 class="pricing-header">Working Team</h3>
         <ul class="pricing-features">
           <li class="pricing-features-item">Shaurya</li>
 		  <li class="pricing-features-item">Shravan Seth</li>
-      <li class="pricing-features-item">Abhishek Banerjee</li>
           <li class="pricing-features-item">Nirmalya Misra</li>
+          <li class="pricing-features-item">Abhishek Banerjee</li>
 		  <li class="pricing-features-item">Ronita Das</li>
 		  <li class="pricing-features-item">Piyush Choudhary</li>
 		  <li class="pricing-features-item">Kausar De</li>
@@ -288,7 +335,7 @@ svg {
       </div>
       
       <div class="pricing-plan">
-        <img src="{% static 'just_co_away/assets/2.png' %}" alt="" class="pricing-img">
+        <img src="{% static '/assets/2.png' %}" alt="" class="pricing-img">
         <h3 class="pricing-header">Contributors</h3>
         <ul class="pricing-features">
           <li class="pricing-features-item">Shekhar Suman</li>
@@ -306,7 +353,7 @@ svg {
       </div>
       
       <div class="pricing-plan">
-        <img src="{% static 'just_co_away/assets/3.png' %}" alt="" class="pricing-img">
+        <img src="{% static '/assets/3.png' %}" alt="" class="pricing-img">
         <h3 class="pricing-header">Special Thanks</h3>
         <ul class="pricing-features">
           <li class="pricing-features-item">Prof. Dr. Indraneel Mukhopadhyay</li>
@@ -369,8 +416,7 @@ svg {
   </g -->
 
 </svg>
-<footer div><a href = "{% url 'homepage' %}">Return To Homepage</a></footer>
-  
+<footer><a href = "{% url 'homepage' %}">Return To Homepage</a></footer>
 </footer>
 </html>
 

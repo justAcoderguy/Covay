@@ -37,21 +37,32 @@
     }
 
     img {
-      margin-top: 50px;
+      margin-top: 70px;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 250px;
+      width: 340px;
     }
 
-    @media (min-width: 480px) {
+    @media (max-width: 480px) {
       img {
         margin-top: 50px;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 30%;
+        width: 70%;
       }
+      .btn-hover.color-9 {
+        width: 57%;
+        font-size: 16px;
+      }
+      footer {
+        width: 100vw;
+        position: fixed;
+        text-align: center;
+        bottom: 10px;
+        font-size: 12px;
+    }
     }
 
     .buttons {
@@ -71,7 +82,6 @@
       text-align: center;
       border: none;
       background-size: 300% 100%;
-
       border-radius: 50px;
       moz-transition: all .4s ease-in-out;
       -o-transition: all .4s ease-in-out;
@@ -103,8 +113,6 @@
       position: fixed;
       text-align: center;
       bottom: 10px;
-      right: 8px;
-      font-size: large;
     }
 
 
@@ -216,13 +224,13 @@
 
 <body>
   <div>
-    <img src="{% static 'just_co_away/assets/logo.png' %}" } </div> <center>
+    <img src="{% static '/assets/logo.png' %}" > </div> <center>
     <p style=font-family:'Montserrat' size="4" color="#EFFCFF"> SENDING COVID AWAY </p>
     <div class="buttons">
       <a href="{% url 'listings' %}"> <button class="btn-hover color-9">Find Oxygen Supply</button></a>
     </div>
     <footer>
-      <svg viewBox="0 5 120 28">
+      <svg viewBox="0 2 120 28">
         <defs>
           <filter id="goo">
             <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
@@ -269,8 +277,8 @@
     </g>
   </g -->
       </svg>
-      <footer> COVAY, All Rights Reserved © 2021 | <a href="{% url 'contributors' %}">See our Contributors</a>
-
+      <footer> COVAY, All Rights Reserved © 2021
+        <br><a href="{% url 'contributors' %}">See our Contributors</a>
       </footer>
 </body>
 
