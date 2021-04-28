@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SECURE_CONTENT_TYPE_NOSNIFF = True
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
