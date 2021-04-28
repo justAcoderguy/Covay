@@ -11,6 +11,7 @@ please follow the following steps :
 cd mysite
 touch .env
 ```
+For WINDOWS manually create .env in 'mysite' with some code editor like VS code
   - Once you have created .env file, please adhere to the .env.example file in mysite/.env.example present to fill in the values.
   - GOOGLE_MAPS_API_KEY is not required if you dont want to see the working maps. If you have an API key at your disposal , feel free to use it
     It is however not necessary and you should still be able to see the outline of the map for styling purposes
@@ -24,6 +25,11 @@ touch .env
 python -m venv venv
 source venv/bin/activate
 ```
+(Code for WINDOWS OS):
+```
+python3 -m venv venv
+venv\Scripts\activate
+```
 3. Install requirements.
 ```
 pip install -r requirements.txt
@@ -32,6 +38,12 @@ pip install -r requirements.txt
 ```
 python manage.py migrate
 ```
+
+5.To start the development server
+```
+python manage.py runserver
+```
+6. Copy the URL and paste it in browser.
 
 ## Commmiting to this repo.
  1. While commiting please create a branch in your name/issue name and then commit. **DO NOT COMMIT TO MASTER BRANCH**
