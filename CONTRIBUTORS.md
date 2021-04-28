@@ -38,7 +38,6 @@ pip install -r requirements.txt
 ```
 python manage.py migrate
 ```
-if this gives error "Path not defined" remove the BASE DIR code from local_settings.py also rename database to like 'db_name'
 
 5.To start the development server
 ```
