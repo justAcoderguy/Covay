@@ -47,6 +47,31 @@
 {% else %}
 <h1>Sorry, there are no available Oxygen Dealers available currently.</h1>
 {% endif %}
+
+
+{% if listings.has_other_pages %}
+  <ul class="pagination">
+    {% if listings.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ listings.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><a class="page-link"><span>&laquo;</span></a></li>
+    {% endif %}
+    {% for i in listings.paginator.page_range %}
+      {% if listings.number == i %}
+        <li class="page-item active"><a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a></li>
+      {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if listings.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ listings.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><a class="page-link"><span>&raquo;</span></a></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
 {% endblock %}
 
 

@@ -8,7 +8,7 @@ from django.template import Context, loader
 from django.http import HttpResponse
 from django.core import serializers
 from django.conf import settings
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def homepage(request):
     homepage = loader.get_template('just_co_away/homepage.html')
@@ -19,7 +19,18 @@ def contributors(request):
     return HttpResponse(contributors.render())
 
 def listings(request):
-    listings = Listing.available_objects.filter(published_date__lte = timezone.now())
+    listings_list = Listing.available_objects.filter(published_date__lte = timezone.now())
+    page = request.GET.get('page', 1)
+    
+    paginator = Paginator(listings_list, 5)
+
+    try:
+        listings = paginator.page(page)
+    except PageNotAnInteger:
+        listings = paginator.page(1)
+    except EmptyPage:
+        listings = paginator.page(paginator.num_pages)
+
     return render(request, 'just_co_away/listings.html', 
     {'listings': listings, 
     'api_key': settings.GOOGLE_MAPS_API_KEY,
