@@ -17,7 +17,7 @@
             <p>Address: {{ listing.address|linebreaksbr }}</p>
             <p>City: {{ listing.city|linebreaksbr }}</p>
             <p>PIN Code: {{ listing.pincode|linebreaksbr }}</p>
-            <p>Delivery Available? {{ listing.delivery|linebreaksbr|yesno }}</p>
+            <p>Delivery Available? {{ listing.delivery|linebreaksbr|yesno:"No,Yes" }}</p>
             <p>Max. Delivery Distance: {{ listing.maximum_delivery_distance|linebreaksbr }}</p>
             <p>Cylinders Per Customer: {{ listing.cylinders_per_customer|linebreaksbr }}</p>
            
