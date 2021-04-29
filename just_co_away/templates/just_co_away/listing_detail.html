@@ -1,38 +1,44 @@
-{% extends 'just_co_away/base.html' %}
+{% extends 'just_co_away/base.html' %} {% block content %}
+<article class="listing">
+	<aside class="actions">
+		{% if user.is_authenticated %}
+		<a class="btn btn-default" href="{% url 'listing_edit' pk=listing.pk %}">
+			{% include './icons/pencil-fill.svg' %}
+		</a>
+		<a class="btn btn-default" href="{% url 'listing_remove' pk=listing.pk %}">
+			{% include './icons/bookmark-x-fill.svg' %}
+		</a>
+		{% endif %}
+	</aside>
 
-{% block content %}
-    <article class = "listing">
-        <aside class="actions">
-            {% if user.is_authenticated %}
-                <a class="btn btn-default" href="{% url 'listing_edit' pk=listing.pk %}">
-                    {% include './icons/pencil-fill.svg' %}
-                </a>
-                <a class="btn btn-default" href="{% url 'listing_remove' pk=listing.pk %}">
-                    {% include './icons/bookmark-x-fill.svg' %}
-                </a>
-            {% endif %}
-        </aside>
-
-        {% if listing.published_date %}
-            <time class = "date">
-                {{ listing.published_date }}
-            </time>
-        {% else %}
-            <a class="btn btn-default" href="{% url 'listing_publish' pk=listing.pk %}">Publish</a>
-        {% endif %}
-        <h2><a href = "{% url 'listing_detail' pk=listing.pk %}">Supplier: {{ listing.supplier|linebreaksbr }}</a></h2>
-        <p>Available? {{ listing.available|linebreaksbr }}</p>
-        <p>Price Range: {{ listing.price|linebreaksbr }}</p>
-        <p>Phone Number: {{ listing.phone_number|linebreaksbr }}</p>
-        <p>Landline Number: {{ listing.landline_number|linebreaksbr }}</p>
-        <p>Whatsapp Number: {{ listing.whatsapp_number|linebreaksbr }}</p>
-        <p>Address: {{ listing.address|linebreaksbr }}</p>
-        <p>State: {{ listing.state|linebreaksbr }}</p>
-        <p>City: {{ listing.city|linebreaksbr }}</p>
-        <p>PIN Code: {{ listing.pincode|linebreaksbr }}</p>
-        <p>Delivery Available? {{ listing.delivery|linebreaksbr }}</p>
-        <p>Max. Delivery Distance: {{ listing.maximum_delivery_distance|linebreaksbr }}</p>
-        <p>Cylinders Per Customer: {{ listing.cylinders_per_customer|linebreaksbr }}</p>
-        <p>Verified On: {{ listing.verified_on|linebreaksbr }}</p>
-    </article>
+	{% if listing.published_date %}
+	<time class="date"> {{ listing.published_date }} </time>
+	{% else %}
+	<a class="btn btn-default" href="{% url 'listing_publish' pk=listing.pk %}"
+		>Publish</a
+	>
+	{% endif %}
+	<h2>
+		<a href="{% url 'listing_detail' pk=listing.pk %}"
+			>Supplier: {{ listing.supplier|linebreaksbr }}</a
+		>
+	</h2>
+	<p>Available? {{ listing.available|linebreaksbr }}</p>
+	<p>Price Range: {{ listing.price|linebreaksbr }}</p>
+	<p>Phone Number: {{ listing.phone_number|linebreaksbr }}</p>
+	<p>Landline Number: {{ listing.landline_number|linebreaksbr }}</p>
+	<p>Whatsapp Number: {{ listing.whatsapp_number|linebreaksbr }}</p>
+	<p>Address: {{ listing.address|linebreaksbr }}</p>
+	<p>State: {{ listing.state|linebreaksbr }}</p>
+	<p>City: {{ listing.city|linebreaksbr }}</p>
+	<p>PIN Code: {{ listing.pincode|linebreaksbr }}</p>
+	<p>Delivery Available? {{ listing.delivery|linebreaksbr }}</p>
+	<p>
+		Max. Delivery Distance: {{ listing.maximum_delivery_distance|linebreaksbr }}
+	</p>
+	<p>
+		Cylinders Per Customer: {{ listing.cylinders_per_customer|linebreaksbr }}
+	</p>
+	<p>Verified On: {{ listing.verified_on|linebreaksbr }}</p>
+</article>
 {% endblock %}

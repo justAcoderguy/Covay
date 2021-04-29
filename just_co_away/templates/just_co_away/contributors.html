@@ -1,431 +1,455 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>COVAY Contributors</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link href="//fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-  <style>
+	<head>
+		<title>COVAY Contributors</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link
+			href="//fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext"
+			rel="stylesheet"
+			type="text/css"
+		/>
 
- html {
-  box-sizing: border-box;
-  font-family: 'Montserrat';
-}
+		<style>
+			html {
+				box-sizing: border-box;
+				font-family: "Montserrat";
+			}
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+			*,
+			*:before,
+			*:after {
+				box-sizing: inherit;
+			}
 
-body {
-  padding: 0 25px 25px;
-  position: relative;
-  width: 100%;
- 
-   background: #56CCF2;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(90deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(90deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- --col-deepblue: #E9FBFF;
-}
+			body {
+				padding: 0 25px 25px;
+				position: relative;
+				width: 100%;
 
-img {
-      margin-top: 70px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 340px;
-    }
+				background: #56ccf2; /* fallback for old browsers */
+				background: -webkit-linear-gradient(
+					90deg,
+					rgba(84, 58, 183, 1) 0%,
+					rgba(0, 172, 193, 1) 100%
+				); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(
+					90deg,
+					rgba(84, 58, 183, 1) 0%,
+					rgba(0, 172, 193, 1) 100%
+				); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				--col-deepblue: #e9fbff;
+			}
 
-@media (min-width: 900px) {
-  .background {
-    padding: 0 0 220px;
-  }
-}
+			img {
+				margin-top: 70px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 340px;
+			}
 
-@media (max-width: 480px) {
-      img {
-        margin-top: 50px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 70%;
-      }
-      .btn-hover.color-9 {
-        width: 57%;
-        font-size: 16px;
-      }
-      footer {
-        width: 100vw;
-        position: fixed;
-        text-align: center;
-        bottom: 10px;
-        font-size: 12px;
-      }
-      .panel {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 15px 25px;
-        position: relative;
-        width: 70%;
-        z-index: 10;
-      }
+			@media (min-width: 900px) {
+				.background {
+					padding: 0 0 220px;
+				}
+			}
 
-      .pricing-table {
-        box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-      }
-      .pricing-plan {
-        border-bottom: none;
-        border-right: 1px solid #e1f1ff;
-        flex-basis: 100%;
-      }
-    }
+			@media (max-width: 480px) {
+				img {
+					margin-top: 50px;
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					width: 70%;
+				}
+				.btn-hover.color-9 {
+					width: 57%;
+					font-size: 16px;
+				}
+				footer {
+					width: 100vw;
+					position: fixed;
+					text-align: center;
+					bottom: 10px;
+					font-size: 12px;
+				}
+				.panel {
+					background-color: #fff;
+					border-radius: 10px;
+					padding: 15px 25px;
+					position: relative;
+					width: 70%;
+					z-index: 10;
+				}
 
+				.pricing-table {
+					box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08),
+						0px 20px 31px 3px rgba(0, 0, 0, 0.09),
+						0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+					display: flex;
+					flex-direction: column;
+					width: 50%;
+				}
+				.pricing-plan {
+					border-bottom: none;
+					border-right: 1px solid #e1f1ff;
+					flex-basis: 100%;
+				}
+			}
 
-.container {
-  margin: 0 auto;
-  padding: 50px 0 0;
-  max-width: 960px;
-  width: 100%;
-}
+			.container {
+				margin: 0 auto;
+				padding: 50px 0 0;
+				max-width: 960px;
+				width: 100%;
+			}
 
-.panel {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 15px 25px;
-  position: relative;
-  width: 100%;
-  z-index: 10;
-}
+			.panel {
+				background-color: #fff;
+				border-radius: 10px;
+				padding: 15px 25px;
+				position: relative;
+				width: 100%;
+				z-index: 10;
+			}
 
-.pricing-table {
-  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
-  display: flex;
-  flex-direction: column;
-}
+			.pricing-table {
+				box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08),
+					0px 20px 31px 3px rgba(0, 0, 0, 0.09),
+					0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+				display: flex;
+				flex-direction: column;
+			}
 
-@media (min-width: 900px) {
-  .pricing-table {
-    flex-direction: row;
-  }
-}
+			@media (min-width: 900px) {
+				.pricing-table {
+					flex-direction: row;
+				}
+			}
 
-.pricing-table * {
-  text-align: center;
-  
-}
+			.pricing-table * {
+				text-align: center;
+			}
 
-.pricing-plan {
-  border-bottom: 1px solid #e1f1ff;
-  padding: 25px;
-}
+			.pricing-plan {
+				border-bottom: 1px solid #e1f1ff;
+				padding: 25px;
+			}
 
-.pricing-plan:last-child {
-  border-bottom: none;
-}
+			.pricing-plan:last-child {
+				border-bottom: none;
+			}
 
-@media (min-width: 900px) {
-  .pricing-plan {
-    border-bottom: none;
-    border-right: 1px solid #e1f1ff;
-    flex-basis: 100%;
-    
-  }
+			@media (min-width: 900px) {
+				.pricing-plan {
+					border-bottom: none;
+					border-right: 1px solid #e1f1ff;
+					flex-basis: 100%;
+				}
 
-  .pricing-plan:last-child {
-    border-right: none;
-  }
-}
+				.pricing-plan:last-child {
+					border-right: none;
+				}
+			}
 
-.pricing-img {
-  margin-bottom: 25px;
-  max-width: 100%;
-}
+			.pricing-img {
+				margin-bottom: 25px;
+				max-width: 100%;
+			}
 
-.pricing-header {
-  color: #888;
-  font-weight: 600;
-  font-family: Helvetica;
-  
-}
+			.pricing-header {
+				color: #888;
+				font-weight: 600;
+				font-family: Helvetica;
+			}
 
-.pricing-features {
-  color: #016FF9;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin: 50px 0 25px;
-}
+			.pricing-features {
+				color: #016ff9;
+				font-weight: 600;
+				letter-spacing: 1px;
+				margin: 50px 0 25px;
+			}
 
-.pricing-features-item {
-  border-top: 1px solid #e1f1ff;
-  font-size: 14px;
-  line-height: 1.7;
-  
-}
+			.pricing-features-item {
+				border-top: 1px solid #e1f1ff;
+				font-size: 14px;
+				line-height: 1.7;
+			}
 
-.pricing-features-item:last-child {
-  border-bottom: 1px solid #e1f1ff;
-}
+			.pricing-features-item:last-child {
+				border-bottom: 1px solid #e1f1ff;
+			}
 
-.pricing-price {
-  color: #016FF9;
-  display: block;
-  font-size: 32px;
-  font-weight: 700;
-}
+			.pricing-price {
+				color: #016ff9;
+				display: block;
+				font-size: 32px;
+				font-weight: 700;
+			}
 
-.pricing-button {
-  border: 1px solid #9dd1ff;
-  border-radius: 10px;
-  color: #348EFE;
-  display: inline-block;
-  margin: 25px 0;
-  padding: 15px 35px;
-  text-decoration: none;
-  transition: all 150ms ease-in-out;
-}
+			.pricing-button {
+				border: 1px solid #9dd1ff;
+				border-radius: 10px;
+				color: #348efe;
+				display: inline-block;
+				margin: 25px 0;
+				padding: 15px 35px;
+				text-decoration: none;
+				transition: all 150ms ease-in-out;
+			}
 
-.pricing-button:hover,
-.pricing-button:focus {
-  background-color: #e1f1ff;
-}
+			.pricing-button:hover,
+			.pricing-button:focus {
+				background-color: #e1f1ff;
+			}
 
-.pricing-button.is-featured {
-  background-color: #48aaff;
-  color: #fff;
-}
+			.pricing-button.is-featured {
+				background-color: #48aaff;
+				color: #fff;
+			}
 
-.pricing-button.is-featured:hover,
-.pricing-button.is-featured:active {
-  background-color: #269aff;
-}
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+			.pricing-button.is-featured:hover,
+			.pricing-button.is-featured:active {
+				background-color: #269aff;
+			}
+			@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
 
-a {
-  color:#000000;
-  text-decoration:none;
-}
-footer {
-      width: 100vw;
-      position: fixed;
-      text-align: center;
-      bottom: 10px;
-      right: 10px;
-    }
+			a {
+				color: #000000;
+				text-decoration: none;
+			}
+			footer {
+				width: 100vw;
+				position: fixed;
+				text-align: center;
+				bottom: 10px;
+				right: 10px;
+			}
 
+			footer div {
+				background-color: var(--col-deepblue);
+				margin: -5px 0px 0px 0px;
+				padding: 10px;
+				color: #000000;
+				text-align: right;
+			}
+			svg {
+				width: 100%;
+				overflow: visible;
+			}
 
-    footer div {
-      background-color: var(--col-deepblue);
-      margin: -5px 0px 0px 0px;
-      padding: 10px;
-      color: #000000;
-      text-align: right;
-    }
-svg {
-  width:100%;
-  overflow:visible;
-}
+			.wave {
+				animation: wave 3s linear;
+				animation-iteration-count: infinite;
+				fill: #ffffff;
+			}
+			.drop {
+				fill: var(--col-deepblue);
+				fill: #f0f8ff;
+				animation: drop 3.2s linear infinite normal;
+				stroke: var(--col-deepblue);
+				stroke-width: 0.5;
+				transform: translateY(25px);
+				transform-box: fill-box;
+				transform-origin: 50% 100%;
+			}
 
-.wave {
-  animation: wave 3s linear;
-  animation-iteration-count:infinite;
-  fill: #ffffff;
-}
-.drop {
-  fill: var(--col-deepblue);
-  xfill: #F0F8FF;
-  animation: drop 3.2s linear infinite normal;
-  stroke: var(--col-deepblue);
-  stroke-width:0.5;
-  transform: translateY(25px) ;
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-}
-.drop1 {
-  
-}
-.drop2 {
-  animation-delay: 3s;
-  animation-duration:3s;
-}
-.drop3 {
-  animation-delay: -2s;
-  animation-duration:3.4s;
-}
-.drop4 {
-  animation-delay: 1.7s;
-}
-.drop5 {
-  animation-delay: 2.7s;
-  animation-duration:3.1s;
-}
-.drop6 {
-  animation-delay: -2.1s;
-  animation-duration:3.2s;
-}
-.gooeff {
-    filter: url(#goo);
-}
-#wave2 {
-  animation-duration:5s;
-  animation-direction: reverse;
-  opacity: .6
-}
-#wave3 {
-  animation-duration: 7s;
-  opacity:.3;
-}
-@keyframes drop {
-  0% {
-    transform: translateY(25px); 
-  }
-  30% {
-    transform: translateY(-10px) scale(.1);
-  }
-  30.001% {
-    transform: translateY(25px) scale(1); 
-  }
-  70% {
-    transform: translateY(25px); 
-  }
-  100% { 
-    transform: translateY(-10px) scale(.1);  
-  }
-}
-@keyframes wave {
-  to {transform: translateX(-100%);}
-}
+			.drop2 {
+				animation-delay: 3s;
+				animation-duration: 3s;
+			}
+			.drop3 {
+				animation-delay: -2s;
+				animation-duration: 3.4s;
+			}
+			.drop4 {
+				animation-delay: 1.7s;
+			}
+			.drop5 {
+				animation-delay: 2.7s;
+				animation-duration: 3.1s;
+			}
+			.drop6 {
+				animation-delay: -2.1s;
+				animation-duration: 3.2s;
+			}
+			.gooeff {
+				filter: url(#goo);
+			}
+			#wave2 {
+				animation-duration: 5s;
+				animation-direction: reverse;
+				opacity: 0.6;
+			}
+			#wave3 {
+				animation-duration: 7s;
+				opacity: 0.3;
+			}
+			@keyframes drop {
+				0% {
+					transform: translateY(25px);
+				}
+				30% {
+					transform: translateY(-10px) scale(0.1);
+				}
+				30.001% {
+					transform: translateY(25px) scale(1);
+				}
+				70% {
+					transform: translateY(25px);
+				}
+				100% {
+					transform: translateY(-10px) scale(0.1);
+				}
+			}
+			@keyframes wave {
+				to {
+					transform: translateX(-100%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<img src="{% static 'just_co_away/assets/logo.png' %}" style= >
+		<div class="background">
+			<div class="container">
+				<div class="panel pricing-table">
+					<div class="pricing-plan">
+						<p class="small">
+							If you want to contribute to our Codebase please
+							<a
+								class="text-primary"
+								href="https://github.com/justAcoderguy/Covay"
+								>click here</a
+							>
+						</p>
+						<img
+							src="{% static 'just_co_away/assets/1.png' %}"
+							alt=""
+							class="pricing-img"
+						/>
+						<h3 class="pricing-header">Working Team</h3>
+						<ul class="pricing-features">
+							<li class="pricing-features-item">Shaurya</li>
+							<li class="pricing-features-item">Shravan Seth (Web)</li>
+							<li class="pricing-features-item">Nirmalya Misra</li>
+							<li class="pricing-features-item">Abhishek Banerjee (Web)</li>
+							<li class="pricing-features-item">Ronita Das</li>
+							<li class="pricing-features-item">Piyush Choudhary</li>
+							<li class="pricing-features-item">Kausar De (Web)</li>
+							<li class="pricing-features-item">Chaitak Gorai (Web)</li>
+							<li class="pricing-features-item">Swapnamoy Das</li>
+							<li class="pricing-features-item">Ishika Ganguly</li>
+							<li class="pricing-features-item">Anwesha Paul</li>
+							<li class="pricing-features-item">Raktim Chakraborty</li>
+						</ul>
+					</div>
+					<br />
 
-</style>
-</head>
-<body>
-  <img src="{% static 'just_co_away/assets/logo.png' %}" style=
- >
-<div class="background">
-  <div class="container">
+					<div class="pricing-plan pt-5">
+						<img
+							src="{% static 'just_co_away/assets/2.png' %}"
+							alt=""
+							class="pricing-img"
+						/>
+						<h3 class="pricing-header">Contributors</h3>
+						<ul class="pricing-features">
+							<li class="pricing-features-item">Shekhar Suman</li>
+							<li class="pricing-features-item">Subhrodeep Basu</li>
+							<li class="pricing-features-item">Nitesh Choubey</li>
+							<li class="pricing-features-item">Sovik Sinha</li>
+							<li class="pricing-features-item">Md Sharique Rasheed</li>
+							<li class="pricing-features-item">Subarna Mitra</li>
+							<li class="pricing-features-item">Ankit kumar</li>
+							<li class="pricing-features-item">Swapnasish Rakshit</li>
+							<li class="pricing-features-item">Prakash Veer Singh Tomar</li>
+							<li class="pricing-features-item">Anushka Mitra</li>
+						</ul>
+					</div>
 
-    <div class="panel pricing-table ">
-      
-      
-      <div class="pricing-plan">
-        <p class="small">If you want to contribute to our Codebase please <a class="text-primary" href="https://github.com/justAcoderguy/Covay">click here</a> </p>
-        <img src="{% static 'just_co_away/assets/1.png' %}" alt="" class="pricing-img">
-        <h3 class="pricing-header">Working Team</h3>
-        <ul class="pricing-features">
-          <li class="pricing-features-item">Shaurya</li>
-		  <li class="pricing-features-item">Shravan Seth (Web)</li>
-          <li class="pricing-features-item">Nirmalya Misra</li>
-          <li class="pricing-features-item">Abhishek Banerjee (Web)</li>
-		  <li class="pricing-features-item">Ronita Das</li>
-		  <li class="pricing-features-item">Piyush Choudhary</li>
-		  <li class="pricing-features-item">Kausar De (Web)</li>
-		  <li class="pricing-features-item">Chaitak Gorai (Web)</li>
-		  <li class="pricing-features-item">Swapnamoy Das</li>
-		  <li class="pricing-features-item">Ishika Ganguly</li>
-		  <li class="pricing-features-item">Anwesha Paul</li>
-      <li class="pricing-features-item">Raktim Chakraborty</li>
-		  
-		 
-        </ul>
-
-      </div>
-      
-      <div class="pricing-plan pt-5">
-        <img src="{% static 'just_co_away/assets/2.png' %}" alt="" class="pricing-img">
-        <h3 class="pricing-header">Contributors</h3>
-        <ul class="pricing-features">
-          <li class="pricing-features-item">Shekhar Suman</li>
-          <li class="pricing-features-item">Subhrodeep Basu</li>
-		  <li class="pricing-features-item">Nitesh Choubey</li>
-		  <li class="pricing-features-item">Sovik Sinha</li>
-		  <li class="pricing-features-item">Md Sharique Rasheed</li>
-		  <li class="pricing-features-item">Subarna Mitra</li>
-		  <li class="pricing-features-item">Ankit kumar</li>
-		   <li class="pricing-features-item">Swapnasish Rakshit</li>
-		 <li class="pricing-features-item">Prakash Veer Singh Tomar</li>
-		   <li class="pricing-features-item">Anushka Mitra</li>
-        </ul>
-       
-      </div>
-      
-      <div class="pricing-plan pt-5">
-        <img src="{% static 'just_co_away/assets/3.png' %}" alt="" class="pricing-img">
-        <h3 class="pricing-header">Special Thanks</h3>
-        <ul class="pricing-features">
-          <li class="pricing-features-item">Prof. Dr. Indraneel Mukhopadhyay</li>
-          <li class="pricing-features-item">Prof. Prabir Kumar Das</li>
-          <li class="pricing-features-item">Prof.  Subhabrata Sengupta</li>
-		   <li class="pricing-features-item">Prof. Soumyadipta Pal</li>
-		    <li class="pricing-features-item">Prof. Krishnanu Deyasi</li>
-			 </ul>
-
-      </div>
-      
-    </div>    
-  </div>
-</div>
-
-</body>
-<footer>
-<svg viewBox="0 0 120 28">
- <defs> 
-    <filter id="goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
-      <feColorMatrix in="blur" mode="matrix" values="
+					<div class="pricing-plan pt-5">
+						<img
+							src="{% static 'just_co_away/assets/3.png' %}"
+							alt=""
+							class="pricing-img"
+						/>
+						<h3 class="pricing-header">Special Thanks</h3>
+						<ul class="pricing-features">
+							<li class="pricing-features-item">
+								Prof. Dr. Indraneel Mukhopadhyay
+							</li>
+							<li class="pricing-features-item">Prof. Prabir Kumar Das</li>
+							<li class="pricing-features-item">Prof. Subhabrata Sengupta</li>
+							<li class="pricing-features-item">Prof. Soumyadipta Pal</li>
+							<li class="pricing-features-item">Prof. Krishnanu Deyasi</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<footer>
+		<svg viewBox="0 0 120 28">
+			<defs>
+				<filter id="goo">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+					<feColorMatrix
+						in="blur"
+						mode="matrix"
+						values="
            1 0 0 0 0  
            0 1 0 0 0  
            0 0 1 0 0  
-           0 0 0 13 -9" result="goo" />
-      <xfeBlend in="SourceGraphic" in2="goo" />
-    </filter>
-     <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
-  </defs> 
+           0 0 0 13 -9"
+						result="goo"
+					/>
+					<xfeBlend in="SourceGraphic" in2="goo" />
+				</filter>
+				<path
+					id="wave"
+					d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z"
+				/>
+			</defs>
 
-   <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
-   <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
- 
- 
-  <g class="gooeff" filter="url(#goo)">
-  <circle class="drop drop1" cx="20" cy="2" r="8.8"  />
-  <circle class="drop drop2" cx="25" cy="2.5" r="7.5"  />
-  <circle class="drop drop3" cx="16" cy="2.8" r="9.2"  />
-  <circle class="drop drop4" cx="18" cy="2" r="8.8"  />
-  <circle class="drop drop5" cx="22" cy="2.5" r="7.5"  />
-  <circle class="drop drop6" cx="26" cy="2.8" r="9.2"  />
-  <circle class="drop drop1" cx="5" cy="4.4" r="8.8"  />
-  <circle class="drop drop2" cx="5" cy="4.1" r="7.5"  />
-  <circle class="drop drop3" cx="8" cy="3.8" r="9.2"  />
-  <circle class="drop drop4" cx="3" cy="4.4" r="8.8"  />
-  <circle class="drop drop5" cx="7" cy="4.1" r="7.5"  />
-  <circle class="drop drop6" cx="10" cy="4.3" r="9.2"  />
-  
-  <circle class="drop drop1" cx="1.2" cy="5.4" r="8.8"  />
-  <circle class="drop drop2" cx="5.2" cy="5.1" r="7.5"  />
-  <circle class="drop drop3" cx="10.2" cy="5.3" r="9.2"  />
-    <circle class="drop drop4" cx="3.2" cy="5.4" r="8.8"  />
-  <circle class="drop drop5" cx="14.2" cy="5.1" r="7.5"  />
-  <circle class="drop drop6" cx="17.2" cy="4.8" r="9.2"  />
-  <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
- </g>  
-    <!-- g mask="url(#xxx)">
+			<use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2"></use>
+			<use id="wave2" class="wave" xlink:href="#wave" x="0" y="0"></use>
+
+			<g class="gooeff" filter="url(#goo)">
+				<circle class="drop drop1" cx="20" cy="2" r="8.8" />
+				<circle class="drop drop2" cx="25" cy="2.5" r="7.5" />
+				<circle class="drop drop3" cx="16" cy="2.8" r="9.2" />
+				<circle class="drop drop4" cx="18" cy="2" r="8.8" />
+				<circle class="drop drop5" cx="22" cy="2.5" r="7.5" />
+				<circle class="drop drop6" cx="26" cy="2.8" r="9.2" />
+				<circle class="drop drop1" cx="5" cy="4.4" r="8.8" />
+				<circle class="drop drop2" cx="5" cy="4.1" r="7.5" />
+				<circle class="drop drop3" cx="8" cy="3.8" r="9.2" />
+				<circle class="drop drop4" cx="3" cy="4.4" r="8.8" />
+				<circle class="drop drop5" cx="7" cy="4.1" r="7.5" />
+				<circle class="drop drop6" cx="10" cy="4.3" r="9.2" />
+
+				<circle class="drop drop1" cx="1.2" cy="5.4" r="8.8" />
+				<circle class="drop drop2" cx="5.2" cy="5.1" r="7.5" />
+				<circle class="drop drop3" cx="10.2" cy="5.3" r="9.2" />
+				<circle class="drop drop4" cx="3.2" cy="5.4" r="8.8" />
+				<circle class="drop drop5" cx="14.2" cy="5.1" r="7.5" />
+				<circle class="drop drop6" cx="17.2" cy="4.8" r="9.2" />
+				<use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+			</g>
+			<!-- g mask="url(#xxx)">
     <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
     </g>
   </g -->
-
-</svg>
-<footer><a href = "{% url 'homepage' %}">Return To Homepage</a></footer>
-</footer>
+		</svg>
+		<footer><a href="{% url 'homepage' %}">Return To Homepage</a></footer>
+	</footer>
 </html>
-
-
-
-
-
-
