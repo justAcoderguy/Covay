@@ -84,4 +84,73 @@ p.disclaimer {
 p {
     color: #000000;
 }
+.pagination-outer{ text-align: center; }
+.pagination{
+    background: #FFF;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 20px 30px;
+/*    display: inline-flex;*/
+    border-radius: 50px;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.5);
+    position: relative;
+    justify-content: center;
+}
+.pagination li a.page-link{
+    color: #140536;
+    background-color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 45px;
+    height: 45px;
+    width: 45px;
+    padding: 0;
+    margin: 0 12px 0 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,.1), 0 2px 5px rgba(0,0,0,.5);
+    overflow: hidden;
+    position: relative;
+}
+.pagination li.active a.page-link,
+.pagination li a.page-link:hover,
+.pagination li.active a.page-link:hover{
+    color: #fff;
+    border: none;
+}
+.pagination li:first-child a.page-link{ border-radius: 40px 0 0 40px; }
+.pagination li:last-child a.page-link{
+    margin-right: 0;
+    border-radius: 0 40px 40px 0;
+}
+.pagination li a.page-link:before{
+    content: '';
+    background-color: #545de6;
+    height: 0;
+    width: 100%;
+    filter: blur(10px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.3s;
+}
+.pagination li.active a.page-link:before,
+.pagination li a.page-link:hover:before,
+.pagination li.active a.page-link:hover:before{
+    height: 100%;
+    filter: blur(0);
+}
+@media only screen and (max-width: 480px){
+    .pagination{
+        padding: 10px;
+        margin: 0;
+        border-radius: 30px;
+        display: block;
+    }
+    .pagination li{
+        display: inline-block;
+        margin: 0 0 5px;
+    }
+}
+
 
