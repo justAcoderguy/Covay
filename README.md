@@ -9,4 +9,3 @@ A big thank you to the 200+ verifiers that are working with us day and night.
 If you want to help us and contribute to our code, please feel free to contact any of our contributors or feel free to add an issue.
 Before contributing please read the CONTRIBUTORS.md file. Thanks!
 
-Please find the website at http://www.covay.in/
